@@ -1,0 +1,277 @@
+$primaryColour: #161616;
+$SecondaryColour: #f3f3f3;
+$LightBackground: #ffffff;
+$orange: #ff3d00;
+$inactiveColour: #686666;
+
+$FontFamily: "DM sans", sans-serif;
+$Regular: 400;
+$Medium: 500;
+$bold: 800;
+
+$containerWidth: 580px;
+$containerMinHeight: 62px;
+$inputFieldContainerMinHeigth: 268px;
+$Size: 18px;
+$color: transparent;
+
+@mixin inputField {
+  width: 480px;
+  height: 50px;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid #c7bfbf;
+
+  padding-left: 10px;
+  padding-right: 10px;
+  ::placeholder {
+    color: $inactiveColour;
+    font-size: 10px;
+    font-family: $FontFamily;
+  }
+  :invalid {
+    border: 1px solid red;
+    transition: all ease-in-out 1s;
+  }
+}
+@mixin submittingButton {
+  width: 110px;
+  height: 38px;
+  border-radius: 15px;
+  outline: none;
+  border: 1px solid transparent;
+  background-color: $primaryColour;
+  color: $LightBackground;
+
+  cursor: pointer;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  // list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: $FontFamily;
+}
+// design sys css
+:root {
+  --primaryColour: #161616;
+  --SecondaryColour: #f3f3f3;
+  --LightBackground: #ffffff;
+  --orange: #ff3d00;
+  --inactiveColour: #686666;
+
+  --FontFamily: "DM sans", sans-serif;
+  --Regular: 400;
+  --Medium: 500;
+  --bold: 800;
+
+  --containerWidth: 580px;
+  --containerMinHeigth: 50px;
+  --Size: 18px;
+
+  /* Fonr the tests  */
+  --color: red;
+}
+// Pour avoir du css correct au niveau du design sys
+body {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+header {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: $color;
+
+  margin-top: 60px;
+  // Separation des sections
+  margin-bottom: 10px;
+
+  nav {
+    min-width: $containerWidth;
+    width: fit-content;
+    min-height: $containerMinHeight;
+    height: fit-content;
+
+    background-color: $LightBackground;
+    border-radius: 25px;
+    -webkit-box-shadow: 1px 11px 17px 5px rgba(0, 0, 0, 0.15);
+    box-shadow: 1px 11px 17px 5px rgba(0, 0, 0, 0.15);
+
+    padding-left: 30px;
+    padding-right: 30px;
+
+    display: flex;
+    align-items: center;
+
+    .navlinks {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      gap: 10px;
+
+      list-style: none;
+
+      .navPills {
+        min-width: 150px;
+        width: fit-content;
+        height: 35px;
+        border-radius: 15px;
+        border: none;
+        background-color: $SecondaryColour;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        a {
+          font-family: $FontFamily;
+          font-size: 14px;
+          font-weight: $bold;
+
+          color: $primaryColour;
+          padding: 10px;
+          padding-left: 30px;
+          padding-right: 30px;
+          &:hover {
+            color: $LightBackground;
+          }
+        }
+        &:hover {
+          background-color: $primaryColour;
+          color: $LightBackground;
+          transition: all ease-in-out 0.3s;
+        }
+      }
+    }
+  }
+}
+//actual page pill style
+.offer,
+.sold,
+.recharge {
+  background-color: $primaryColour !important;
+  a {
+    color: $SecondaryColour !important;
+  }
+}
+
+/** (g
+- il ya un problème d'exécution quelque part que je dois fix , je ne devrais pas à mettre de simportant 
+- partout pour que ca fonctionne 
+**/
+
+// Design of the main Components
+main {
+  // background-color:blue;
+  width: 100%;
+  min-height: 80vh;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 50px;
+  h1 {
+    font-family: $FontFamily;
+    text-align: center;
+  }
+  h2 {
+    font-family: $FontFamily;
+    font-size: 20px;
+  }
+  // Separation des sections
+  margin-top: 30px;
+  margin-bottom: 10px;
+  .selectingBox {
+    width: 100%;
+    form {
+      display: flex;
+      justify-content: center;
+      gap: 1200px;
+      input[type="radio"] {
+        width: 20px;
+        height: 20px;
+        transition: 0.2s all linear;
+        &:checked {
+          border: 6px solid black;
+        }
+      }
+    }
+  }
+  .containers {
+    display: flex;
+    justify-content: space-between;
+    width: fit-content;
+    gap: 100px;
+    .inputContainer {
+      // pour puvoir avoir des transition entre les states disabled et enabled
+      transition: all ease-in-out 600ms;
+      transform: scale(1);
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+
+      width: $containerWidth;
+      min-height: $inputFieldContainerMinHeigth;
+      height: fit-content;
+
+      background-color: $SecondaryColour;
+      border-radius: 20px;
+      padding-left: 30px;
+      padding-right: 30px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        input[type="text"] {
+          @include inputField();
+        }
+        select {
+          @include inputField();
+        }
+        .submit {
+          @include submittingButton();
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+    .disabled {
+      color: $inactiveColour;
+      transition: all ease-in-out 400ms;
+      transform: scale(0.9);
+      opacity: 0.3;
+      input {
+        &:disabled {
+          pointer-events: none;
+        }
+      }
+      // cette classe sera ajouté aux inputContainer selon le choix du bouton radio
+    }
+  }
+}
+
+// end of design of the main component in Bouchkaraye
+footer {
+  //background-color: purple;
+  background-color: transparent;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  flex-direction: row-reverse;
+  // Separation des sections
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
