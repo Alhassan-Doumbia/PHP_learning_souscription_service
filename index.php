@@ -7,10 +7,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="global_style.css">
-    <link rel="stylesheet" href="loaderStyle.css">
-    <script src="global.js" defer></script>
-    <script src="loaderScript.js" defer></script>
+    <link rel="stylesheet" href="./style/global_style.css">
+    <link rel="stylesheet" href="./style/loaderStyle.css">
+    <script src="./scripts/global.js" defer></script>
+    <script src="./scripts/loaderScript.js" defer></script>
 
     <title>Orange_Souscription</title>
     <style>
