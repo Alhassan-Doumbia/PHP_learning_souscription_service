@@ -96,8 +96,5 @@
             <img src="./assets/enterprise.png" alt="Logo entreprise" title="Orange Côte d'ivoire">
         </div>
     </footer>
-
-    <!-- Scripts -->
-    <!-- <script src="script.js"></script> -->
 </body>
 </html>
