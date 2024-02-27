@@ -31,44 +31,6 @@
     </header>
     <main>
         <?php
-            /**
-             * Même structure que pour le s autres affichages de résultats sauf que lui il affiche tout les éléments udserDATA
-             */
-
-             
-            $user_tbl=[
-                "Amadou Doumbia"=>"0777243549",
-                "Fanta Doumbia"=>"0749783261",
-                "Al hassan Doumbia"=>"0153669477"
-            ];
-             $userData1=[
-                'phoneNumber'=>$user_tbl['Amadou Doumbia'],
-                'InternetConnection'=>1,
-                'callHours'=>0,
-                'moneyAmount'=>10000,
-                'paymentMode'=>'Orange money'
-                // La plus part des modiifications se feront au niveau du solde
-            ];
-            $userData2=[
-                'phoneNumber'=>$user_tbl['Al hassan Doumbia'],
-                'InternetConnection'=>1,
-                'callHours'=>0,
-                'moneyAmount'=>10000,
-                'paymentMode'=>'Orange money'
-                // La plus part des modiifications se feront au niveau du solde
-            ];
-
-            $userData3=[
-                'phoneNumber'=>$user_tbl['Fanta Doumbia'],
-                'InternetConnection'=>1,
-                'callHours'=>0,
-                'moneyAmount'=>10000,
-                'paymentMode'=>'Orange money'
-                // La plus part des modiifications se feront au niveau du solde
-            ];
-
-
-
             $phoneNumber= $_GET['telNumber'];
             $wantedMoney = isset($_GET['montant']) ? intval($_GET['montant']) : 0; // Assurez-vous que $wantedMoney est un entier
             $PaymentMode= $_GET['payment_Mode'];
@@ -76,20 +38,17 @@
 
             include 'functions.php';
             switch($package){
-                case 1 : /*$userData1['callHours']+=3; $userData1['moneyAmount']-=1000;*/ offerUpdateUserData($phoneNumber,3,1000,'call'); 
+                case 1 :  offerUpdateUserData($phoneNumber,3,1000,'call'); 
                 break;
 
-                case 2 : /* $userData1['callHours']+=4.5; $userData1['moneyAmount']-=2000;*/offerUpdateUserData($phoneNumber,4.5,1000,'call'); 
+                case 2 : offerUpdateUserData($phoneNumber,4.5,1000,'call'); 
                 break;
 
-                case 3 :/* $userData1['callHours']+=10;$userData1['moneyAmount']-=5000;*/offerUpdateUserData($phoneNumber,10,1000,'call'); 
+                case 3 :offerUpdateUserData($phoneNumber,10,1000,'call'); 
                 break;
 
                 default: echo "Erreur de package";
             }
-
-            // $userIndex=array_search("$phoneNumber",$user_tbl);
-
         ?>
     </main>
     <footer>

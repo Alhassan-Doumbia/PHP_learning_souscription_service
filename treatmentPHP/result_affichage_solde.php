@@ -32,11 +32,9 @@
     <main>        
     <?php
         include 'functions.php';
-            // Récupération des données du formulaire
             $phoneNumber = $_GET['telNumber'];
             $wantedMoney = isset($_GET['montant']) ? intval($_GET['montant']) : 0; // Assurez-vous que $wantedMoney est un entier
-            $paymentMode = isset($_GET['payment_Mode']) ? $_GET['payment_Mode'] : ''; // Valeur par défaut si la clé n'est pas définie
-
+            $paymentMode = isset($_GET['payment_Mode']) ? $_GET['payment_Mode'] : ''; 
         soldUpdate( $phoneNumber, $wantedMoney, $paymentMode);
     ?>
     

@@ -31,18 +31,6 @@
     </header>
     <main>
         <?php
-            /**
-             * Même structure que pour le s autres affichages de résultats sauf que lui il affiche tout les éléments udserDATA
-             */
-
-            //  $userData1=[
-            //     'phoneNumber'=>'0777243549',
-            //     'InternetConnection'=>1,
-            //     'moneyAmount'=>10000,
-            //     'paymentMode'=>'Orange money'
-            //     // La plus part des modiifications se feront au niveau du solde
-            // ];
-
             $phoneNumber = $_GET['telNumber'];
             $wantedMoney = isset($_GET['montant']) ? intval($_GET['montant']) : 0; // Assurez-vous que $wantedMoney est un entier
             $paymentMode = isset($_GET['payment_Mode']) ? $_GET['payment_Mode'] : ''; // Valeur par défaut si la clé n'est pas définie
@@ -50,18 +38,17 @@
 
             include 'functions.php';
             switch($package){
-                case 1 : /*$userData1['InternetConnection']+=3; $userData1['moneyAmount']-=1000;*/offerUpdateUserData($phoneNumber,0.3,1000,'internet'); 
+                case 1 :offerUpdateUserData($phoneNumber,0.3,1000,'internet'); 
                 break;
 
-                case 2 : /* $userData1['InternetConnection']+=4.5; $userData1['moneyAmount']-=2000;*/offerUpdateUserData($phoneNumber,1.3,2000,'internet'); 
+                case 2 : offerUpdateUserData($phoneNumber,1.3,2000,'internet'); 
                 break;
 
-                case 3 : /*$userData1['InternetConnection']+=10;$userData1['moneyAmount']-=5000;*/offerUpdateUserData($phoneNumber,0.3,1000,'internet'); 
+                case 3 : offerUpdateUserData($phoneNumber,0.3,1000,'internet'); 
                 break;
 
                 default: echo "Erreur de package";
             }
-
         ?>
     </main>
     <footer>
