@@ -1,7 +1,6 @@
 <?php
 function offerUpdateUserData($phoneNumber, $quantity, $moneyAmount, $operationType)
-{
-    //Cette fonction me permet de supprimer la pageConsultationAvantage2 en fait 
+{ 
     $userPhoneNumber = ['0153669477', '0777243549', '0787108622'];
     $globalUserData = [
         [
@@ -34,20 +33,16 @@ function offerUpdateUserData($phoneNumber, $quantity, $moneyAmount, $operationTy
                 echo "<p>données mobiles :" . ($globalUserData[$index]['callTime'] += $quantity) . " Go </p><br>";
                 echo "<p>solde :" . ($globalUserData[$index]['moneyAmount'] -= $moneyAmount) . " Fcfa<p>";
             } 
-            
             else {
                 echo "Numéro de téléphone non trouvé.";
             }
-
         } 
         else if ($operationType === 'internet') {
             if ($index !== false && isset($globalUserData[$index])) {
                 echo "<h2>" . $globalUserData[$index]['owner'] . " vos avantages sont les suivants : </h2> <br>";
                 echo "<p>données mobiles :" . ($globalUserData[$index]['InternetConnection'] += $quantity) . " Go </p><br>";
                 echo "<p>solde :" . ($globalUserData[$index]['moneyAmount'] -= $moneyAmount) . " Fcfa<p>";
-            } 
-            
-            else {
+            }  else {
                 echo "Numéro de téléphone non trouvé.";
             }
         }
@@ -55,7 +50,6 @@ function offerUpdateUserData($phoneNumber, $quantity, $moneyAmount, $operationTy
         echo ("Il y a une erreur du type : " . $th->getMessage() . " dans la fonction updateUserData");
     }
 }
-
 
 function soldUpdate($phoneNumber, $quantity, $paymentMode){
     // Récupérer l'index après avoir mis à jour les données utilisateur
@@ -83,11 +77,9 @@ function soldUpdate($phoneNumber, $quantity, $paymentMode){
             'paymentMode' => 'Orange money'
         ]
     ];
-
     $userPhoneNumber = ['0153669477', '0777243549', '0787108622'];
     $index = array_search($phoneNumber, $userPhoneNumber);
     if ($index !== false && isset($globalUserData[$index])) {
-         // Manipulation des données utilisateur
          $globalUserData[$index]['moneyAmount'] += $quantity;
          $globalUserData[$index]['paymentMode']= $paymentMode;
          echo "<h2>". $globalUserData[$index]['owner'] . "  votre solde est de :  </h2> <br>";
@@ -97,6 +89,4 @@ function soldUpdate($phoneNumber, $quantity, $paymentMode){
         echo "<h1>Utilisateur introuvable.</h1>";
     }
 };
-
-
-// ya vla les erreurs de reference dans ce code à cuse du scope des variables 
+ 
