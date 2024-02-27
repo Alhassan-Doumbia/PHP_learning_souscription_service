@@ -1,0 +1,28 @@
+à implementer :
+	- verification du numeros de telephone :"valide" ,"invalide"
+	- Afficher menu contenant les actions suivantes :  vérification de solde , Le rechargement du crédit , vérification des offres spéciales(Appel/ internet /Appel+internet) ,Possibilité de parler à un reperesentant du service client 
+
+L'intrface se subdivise donc en deux parties : 
+-Un Champs à remplir 
+-Un menu avec des boutons faisant différentes actions. 
+
+Contraintes : 
+
+- Le Boutons rechargement de crédit active un champs qui permet de recharger son crédit , , le bouton de verifications des offres spéciales pourraient être un select , Le bouton permettant de parler à un representant de la boite sera un bouton Dummy , car je ne vais pas le lier à une API quelconque 
+
+-Possible :
+
+Afficher le contenu de la variable du solde en le liant au bouton : vérification de solde 
+Le bouton recharger son crédit : Affiche un input et un bouton envoyer , lorsqu'il ya du contenu un bouton envoyer s'affiche sur lequel on peut cliquer. Le contenu est recupéré et est ajouté à la variable de solde 
+
+verification du numeros de telephone (se ferra avec html en mettant une minlength de 10 chiffres ;  et le bouton permettant d'envoyer sera inactif et inutilisable si on atteint pas le nomre de chiffre souhaité ; au pire , on ferra une verification de type toute simple 
+ 
+
+
+Les traitement via php
+Les affichages se feront via Javascript
+
+L'objectif est de fair eu MVPdu coups tout ce qui est design est à ignorer ainsi que tout ce qui est animation etc , je ferrai un truc très brut . 
+
+
+			

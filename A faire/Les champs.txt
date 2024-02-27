@@ -1,0 +1,23 @@
+Je suis Orange 
+
+Au niveau des offres  , l'interface se presentera de la manière suivante : 
+
+- Liste numeroté de 1 à 8 peut être au niveau des choix des forfits 
+
+-Le champs sera un champs de type number qui ne prendra que 2 caractère au maximum 
+
+-Le code php qui gèrera cette partie sera un switch , selo le contenu du champs (allant de 1 à n) on a un résultat équivalent et l'affichage d'une variable dans une page autogénérée 
+
+
+Au nivau de la recharge du cmptes : L'utilisater aura 2 champs :
+ Un champs où il entre son numéro de téléphones 
+ un champs pour le  montant de la transaction 
+ un select pour la methode de paiemet (OrangeMoney ou wave ou djamo);
+
+quelques petites indicatio dans la card permettent d'orienter l'utilisateur ,ex : n'oubliez pas de 
+
+Pour la vérification du solde , on devrait avoir un truc similaire sauf qu'on aura : 
+un champs central : où l'utilisateur entre son numéro de telephone 
+et en bas du champs , le solde actul est affiché . 
+
+pour la reconaissance du numéro de telephone , on aura un numéro de téléphone préenregistré. celui ci sera daans un tableau associatif et c'est dans ce tableau associatis qu'i yaura le solde internet , le crédit etc ,l'enocours et pleins d'autres bétises (lestableaux associatifs c'est genre les objets en js)
